@@ -1,0 +1,7 @@
+1.- despues de clonar el repositorio en la raiz instalar node_modules
+>npm install
+
+2.- una vez que xamp este funcionando apache y mysql ademas del backend tambien arrancado iniciar el fronted con 
+>npm start
+
+empezar a utilizar con el menu
