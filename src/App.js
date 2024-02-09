@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ClientesConLibrosVencidos from "./pages/ListadoClientesLibrosVEncidos";
+import PrestamosPorSemana from "./pages/ListaPrestamosSemana";
+import PrestamosPorMes from "./pages/ListaPrestamosMes";
+import Navegacion from "./menu/Navegacion";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container text-center">
+      <BrowserRouter>
+        <Navegacion />
+        <Routes>
+          <Route exact path="/" element={<ClientesConLibrosVencidos />} />{" "}
+          <Route exact path="/vencidos" element={<ClientesConLibrosVencidos />} />{" "}
+          <Route exact path="/semana" element={<PrestamosPorSemana />} />{" "}
+          <Route exact path="/mes" element={<PrestamosPorMes />} />{" "}
+          
+        </Routes>{" "}
+      </BrowserRouter>{" "}
     </div>
   );
 }
